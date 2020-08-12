@@ -6,6 +6,7 @@ pool:
 
 variables:
   imageName: 'pipelines-javascript-docker'
+  skipComponentGovernanceDetection: 'true' # Disable internal to Microsoft injected policy to save some time in the build
 
 steps:
 - task: Docker@2
