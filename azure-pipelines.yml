@@ -5,16 +5,10 @@ pool:
   vmImage: 'Ubuntu-16.04'
 
 variables:
-  imageName: 'pipelines-javascript-docker'
+  imageName: 'nodewebapp'
   skipComponentGovernanceDetection: 'true' # Disable internal to Microsoft injected policy to save some time in the build
 
 steps:
-#- task: Docker@2
-#  displayName: Build image
-#  inputs:
-#    repository: $(imageName)
-#    command: build
-#    Dockerfile: app/Dockerfile
 - task: Docker@2
   displayName: Build and push image to Azure Container Registry
   inputs:
