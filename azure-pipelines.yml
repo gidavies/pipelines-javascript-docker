@@ -9,15 +9,16 @@ variables:
   skipComponentGovernanceDetection: 'true' # Disable internal to Microsoft injected policy to save some time in the build
 
 steps:
+#- task: Docker@2
+#  displayName: Build image
+#  inputs:
+#    repository: $(imageName)
+#    command: build
+#    Dockerfile: app/Dockerfile
 - task: Docker@2
-  displayName: Build image
-  inputs:
-    repository: $(imageName)
-    command: build
-    Dockerfile: app/Dockerfile
-- task: Docker@2
-  displayName: Push image to Azure Container Registry
+  displayName: Build and push image to Azure Container Registry
   inputs:
     containerRegistry: 'AzureContainerRegistry'
     repository: '$(imageName)'
-    command: 'push'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
