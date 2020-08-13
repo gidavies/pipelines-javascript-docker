@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: nodewebapp 
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: nodewebapp 
+    spec:
+      containers:
+        - name: nodewebapp 
+          image: gjadacr.azurecr.io/nodewebapp
+          ports:
+          - containerPort: 8080
