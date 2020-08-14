@@ -8,7 +8,7 @@ const HOST = '0.0.0.0';
 const app = express();
 app.get('/', (req, res) => {
   res.write('<H1>My Node App</H1>');
-  res.write('<p>This is my highly sophisticated Node Express app</p>');
+  res.write('<p>This is my very simple Node Express app</p>');
   res.write('<H2>Source Code</H2>');
   res.write('<p>The source code, including Azure pipeline definition and kubernetes deployment files are in <a href="https://github.com/gidavies/pipelines-javascript-docker">GitHub</a></p>');
   res.write('<H2>Tools and Technology</H2>');
